@@ -26,4 +26,4 @@ deploy:
   provider: script
   script: bash ./deploy.sh
 on:
-  bransh: master
+  bransh: dependabot/npm_and_yarn/client/axios-0.19.2
