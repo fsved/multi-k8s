@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: svedhemautomation-org-tls
+spec:
+  secretName: svedhemautomation-org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: svedhemautomation.org
+  dnsNames:
+    - svedhemautomation.org
+    - www.svedhemautomation.org
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - svedhemautomation.org
+          - www.svedhemautomation.org
